@@ -22,7 +22,11 @@ first, need to forge a clear understanding of linked-list, then start coding.
 
 version 1's code was focus on reusability and encapsulation, I wrote a `getPreNode(index)` to get the previous node of index, when insert or delete, I can get it's previous node by calling this method then do that operation. Using a dummyHead and carefully handle edge cases makes code more concise, it pass all test cases but TC is not well.
 
-version 2 should focus more on TC optimize, by optimize addAtTail from O(n) to O(1).
+version 2 should focus more on TC optimize, by optimize addAtTail from O(n) to O(1), make runtime range from 5% to 40+%;
+
+after revised deleteAtIndex, runtime became 95+%, finish today's tasks.
+
+![image-20240322225333206](day3-LinkedList.assets/image-20240322225333206.png)
 
 
 

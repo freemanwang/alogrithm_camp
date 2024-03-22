@@ -6,7 +6,9 @@ import { ListNode, printNodes } from "./util.js";
 var MyLinkedList = function() {
     this.size = 0;
     this.dummyHead = new ListNode();
-    this.dummyTail = new ListNode(); // next point at last node, make O(1) to addAtTail
+    // point at last node, make O(1) to addAtTail
+    this.dummyTail = new ListNode(); 
+    this.dummyHead.next = this.dummyTail;
 };
 
 /** 
@@ -60,15 +62,27 @@ MyLinkedList.prototype.addAtTail = function(val) {
  * @return {void}
  */
 MyLinkedList.prototype.addAtIndex = function(index, val) {
-    if (this.size < index) { // invalid index, maximum valid index is equal to this.size, means insert at tail
+    if (this.size < index || index < 0) { // invalid index, maximum valid index is equal to this.size, means insert at tail
         return null;
     }
     const node = new ListNode(val);
-    const preNode = this.getPreNode(index);
-    
-    node.next = preNode.next;
-    preNode.next = node;
     this.size ++;
+
+    if (index === 0) { // add at head
+        node.next = this.dummyHead.next
+        this.dummyHead.next = node;
+    } else if (this.size === index) { // add at tail
+        this.dummyTail.next = node;
+        this.dummyTail = node;
+    } else { // add at middle
+        const preNode = this.getPreNode(index);
+        node.next = preNode.next;
+        preNode.next = node;
+    }
+
+    if (this.size === 1) {
+        this.dummyTail = node;
+    }
 };
 
 /** 
@@ -76,15 +90,22 @@ MyLinkedList.prototype.addAtIndex = function(index, val) {
  * @return {void}
  */
 MyLinkedList.prototype.deleteAtIndex = function(index) {
-    if (index >= this.size) { // index is 0-based, so maximum valid value is (this.size - 1)
+    if (index >= this.size || index < 0) { // index is 0-based, so maximum valid value is (this.size - 1)
         return;
     }
-    const preNode = this.getPreNode(index);
-    const node = preNode.next;
-    if (node) {
-        preNode.next = node.next
+    let node;
+    if (index === 0) {
+        node = this.dummyHead.next
+        this.dummyHead.next = this.dummyHead.next.next;
     } else {
-        preNode.next = null;
+        const preNode = this.getPreNode(index);
+        node = preNode.next;
+        preNode.next = node.next
+    }
+
+    // update dummyTail if the deleted node is original tail
+    if (index === this.size - 1) {
+        this.dummyTail = preNode;
     }
     this.size --;
     return node;
