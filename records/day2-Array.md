@@ -22,7 +22,7 @@ b). if sum is lower than target, move right pointer forward and accumulate it's 
 
 when right pointer iterate all numbers in nums, return minLen as result
 
-
+ [day3-LinkedList.md](day3-LinkedList.md) 
 
 first version code is not easy to read, the two pointers and the minLen update logic is a little bit tricky , so I revised it with the help of gpt and got the second version.
 

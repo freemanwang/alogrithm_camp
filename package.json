@@ -1,0 +1,21 @@
+{
+  "name": "algorithm_camp",
+  "version": "1.0.0",
+  "description": "参加为期60天的算法刷题营，记录每日任务的代码，以及学习心得。",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freemanwang/alogrithm_camp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/freemanwang/alogrithm_camp/issues"
+  },
+  "homepage": "https://github.com/freemanwang/alogrithm_camp#readme"
+}
