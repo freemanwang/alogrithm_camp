@@ -25,7 +25,7 @@ var removeElements = function(head, val) {
     let cur = dummyHead;
     // check if has next node need check, 
     // the initiate condition is guaranteed to have next because null head already returned before 
-    while (cur.next) { 
+    while (cur.next) {
         // if val mathch, drop next node by link cur.next to dropped node's next one
         // and continue check next node if match
         if (cur.next.val === val) {
