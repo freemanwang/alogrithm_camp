@@ -6,7 +6,7 @@
  * @param {ListNode} head
  * @return {ListNode}
  */
-var detectCycle = function(head) {
+var detectCycle = function (head) {
     if (!head || !head.next) {
         return null;
     }
@@ -19,15 +19,19 @@ var detectCycle = function(head) {
         // first meet, restore one of the pointer to start and then continue travel but this time both of them move 1 step each time
         // after that, the next node these two pointers meet will be the entrance
         /**
-        a is steps from node to entrance, b is steps slow have travel in cycle, slow travels (a+b) steps and fast is one more step than slow each time so
-        fast goes 2(a+b) steps;
-        in the other hand, we name the remain steps count in cycle(first meet point to entrance) as c, fast goes (a + b + c + b) steps
+        Let D be the distance from the head of the list to the start of the cycle.
+        Let P be the distance from the start of the cycle to the point where fast and slow meet.
+        Let C be the length of the cycle.
+        At the meeting point, the slow pointer has traveled D + P steps, 
+        and the fast pointer, which has traveled twice as fast, has covered D + P + nC, 
+        where n is some integer representing how many additional laps fast has taken around the cycle.
+        Since fast has traveled twice the distance of slow, we can write:
+        2(D + P) = D + P + nC
+        Simplifying this equation gives D = nC - P. 
+        This means that the distance from the head of the list to the start of the cycle is equal to nC - P.
+        如果我们从链表头和相遇点分别出发，每次都走一步，那么它们将在环的起点相遇。
 
-        2 (a + b) = a + b + n*(c + b) , fast moves one more cycle than slow so n is 1,
-        2a + 2b = a + 2b + c
-        => a === c
-        it means the distance between first meet point to entrance is the same as head to entrance, so we can resotre random pointer to head, then move them 1 step each time(fast don't move 2 steps now)
-        when they meet again, they walk the same distance, that's is so called a or c steps, the meet point is the entrance
+        SO! fast keep in meet point and slow reset to head, then both move 1 step each time to find next meet point
          */
         if (fast === slow) { // meet, there is a cycle
             // reset slow to head, and both of 2 pointer s each time move 1 step
