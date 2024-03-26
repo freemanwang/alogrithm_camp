@@ -11,6 +11,9 @@ restore a pair of char-frequency in map;
 then travel ransomNote's character, sub map[char] by 1 each time, 
 if map[char] is lower than 0 or this key is not in map, return false
 
-## [LC.202](https://leetcode.com/problems/happy-number/description/)
+## [LC.15](https://leetcode.com/problems/3sum/description/)
+version 1, TLE! use hash-map to get the frequency of c that meets c = - (a + b), but TLE!
 
-## [LC.001](https://leetcode.com/problems/two-sum/)
+
+
+## [LC.18](https://leetcode.com/problems/two-sum/)
