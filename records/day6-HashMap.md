@@ -12,8 +12,7 @@ then travel ransomNote's character, sub map[char] by 1 each time,
 if map[char] is lower than 0 or this key is not in map, return false
 
 ## [LC.15](https://leetcode.com/problems/3sum/description/)
-version 1, TLE! use hash-map to get the frequency of c that meets c = - (a + b), but TLE!
-
-
+version 1, use hash-map to get the frequency of c that meets c = - (a + b), but TLE!
+switch to two pointers done with this
 
 ## [LC.18](https://leetcode.com/problems/two-sum/)
