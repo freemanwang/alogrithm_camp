@@ -17,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/freemanwang/alogrithm_camp/issues"
   },
-  "homepage": "https://github.com/freemanwang/alogrithm_camp#readme"
+  "homepage": "https://github.com/freemanwang/alogrithm_camp#readme",
+  "devDependencies": {
+    "@commitlint/config-conventional": "^19.1.0",
+    "commitlint": "^19.2.1"
+  }
 }

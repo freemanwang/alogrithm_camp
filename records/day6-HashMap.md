@@ -1,5 +1,5 @@
 # 概述
-今天进入到哈希表了，开始的题目比较简单。
+哈希表第二天，部分题目如 LC15. 3Sum 使用hashmap会TLE，切回two pointers
 ## [LC.454](https://leetcode.com/problems/4sum-ii/)
 Use two nested for-loops to pick a number from each of num1 and num2. Add them together to get the sum of the two numbers, sum1. Store each sum in a map as a pair of sum - count, where count represents the frequency of the sum's occurrence.
 Then do the same thing to foud another sum that equals to -sum1. when find this one, accumulate map[-sum2] as the count of tuple that has 4 sum of 0.
