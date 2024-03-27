@@ -16,3 +16,5 @@ version 1, use hash-map to get the frequency of c that meets c = - (a + b), but 
 switch to two pointers done with this
 
 ## [LC.18](https://leetcode.com/problems/two-sum/)
+similar to 3Sum but a little bit complex, need two nested for-loop to handle first 2 numbers' combination;
+got stuck in optimized logic, when to end if first two numbers' sum is gt target, can't `return res` in inner for-loop but should break in that condition.
